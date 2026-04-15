@@ -69,7 +69,7 @@
             key-positions = <54 9>;
         };
 
-        F10-F11-F12 {
+        F10_F11_F12 {
             bindings = <&td_f10f11f12>;
             key-positions = <54 10>;
         };
