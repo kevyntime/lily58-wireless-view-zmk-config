@@ -79,10 +79,14 @@
             key-positions = <54 11>;
         };
 
-        ZMK_Test {
-            bindings = <&td_test>;
-            key-positions = <53 0>;
-            layers = <0>;
+        Backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <54 43>;
+        };
+
+        Delete {
+            bindings = <&kp DELETE>;
+            key-positions = <53 42>;
         };
     };
 
@@ -129,7 +133,7 @@
             bindings = <&kp F5>, <&bt BT_SEL 4>;
         };
 
-        td_rbf: rbf {
+        td_rbf: td_rbf {
             compatible = "zmk,behavior-tap-dance";
             label = "Reload, Back, Forward Tap Dance";
             #binding-cells = <0>;
@@ -149,13 +153,6 @@
             #binding-cells = <0>;
             bindings = <&kp LC(TAB)>, <&kp LC(PAGE_DOWN)>;
         };
-
-        td_test: td_test {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_TEST";
-            #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 2>, <&mo 3>;
-        };
     };
 
     keymap {
@@ -171,11 +168,11 @@
 
             display-name = "Base";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                              &kp N6                  &kp N7     &kp N8           &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W   &kp E     &kp R      &kp T                               &kp Y                   &kp U      &kp I            &kp O    &kp P     &kp BACKSLASH
-&kp ESC    &kp A   &kp S   &kp D     &kp F      &kp G                               &kp H                   &kp J      &kp K            &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V      &kp B     &kp LBKT     &kp RBKT     &kp N                   &kp M      &kp COMMA        &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LALT  &kp LCTRL  &kp LGUI  &kp SPACE    &lt 1 ENTER  &mt LEFT_GUI BACKSPACE  &kp RCTRL  &mt RALT DELETE
+&kp GRAVE  &kp N1  &kp N2  &kp N3     &kp N4    &kp N5                                  &kp N6         &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E      &kp R     &kp T                                   &kp Y          &kp U     &kp I      &kp O    &kp P     &kp BACKSLASH
+&kp ESC    &kp A   &kp S   &kp D      &kp F     &kp G                                   &kp H          &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C      &kp V     &kp B         &kp LBKT     &kp RBKT     &kp N          &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LCTRL  &kp LGUI  &kp LEFT_ALT  &kp SPACE    &lt 1 ENTER  &kp RIGHT_ALT  &kp LGUI  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -192,30 +189,6 @@
             >;
 
             label = "ACTION";
-        };
-
-        Test1 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-            >;
-
-            label = "t1";
-        };
-
-        Test2 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
-            >;
-
-            label = "t2";
         };
     };
 };
