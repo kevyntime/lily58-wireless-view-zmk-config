@@ -78,6 +78,11 @@
             bindings = <&kp EQUAL>;
             key-positions = <54 11>;
         };
+
+        DoubleTap_BTCLR {
+            bindings = <&td_none_btclr>;
+            key-positions = <53 0>;
+        };
     };
 
     behaviors {
@@ -149,6 +154,15 @@
             label = "TD_ENTER_HOTSWAP";
             #binding-cells = <0>;
             bindings = <&lt 1 ENTER>, <&mo 2>;
+
+            tapping-term-ms = <100>;
+        };
+
+        td_none_btclr: td_none_btclr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NONE_BTCLR";
+            #binding-cells = <0>;
+            bindings = <&none>, <&bt BT_CLR>;
         };
     };
 
