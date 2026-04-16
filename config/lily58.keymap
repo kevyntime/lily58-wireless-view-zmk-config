@@ -205,7 +205,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                           &mkp MB1        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB2         &td_tabp           &td_tabn
 &trans  &trans  &trans  &trans  &trans  &trans                           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp C_PREVIOUS     &kp C_NEXT
 &trans  &trans  &trans  &trans  &trans  &trans                           &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &to 2              &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp BACKSPACE  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &tog 2             &trans
                         &trans  &trans  &trans  &trans    &none          &trans          &trans          &trans
             >;
 
@@ -217,7 +217,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                        &td_ctrlw_ctrlshiftw  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS  &kp KP_DIVIDE
 &trans  &trans  &trans  &trans  &trans  &trans                        &kp LA(RIGHT_ARROW)   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_ASTERISK
 &trans  &trans  &trans  &trans  &trans  &trans                        &td_f_fivedra         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp DELETE  &kp LA(LEFT_ARROW)    &kp KP_NUMBER_0  &none            &kp KP_DOT       &to 1         &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &kp DELETE  &kp LA(LEFT_ARROW)    &kp KP_NUMBER_0  &none            &kp KP_DOT       &tog 2        &trans
                         &trans  &trans  &trans  &trans    &none       &trans                &trans           &trans
             >;
 
