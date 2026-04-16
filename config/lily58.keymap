@@ -83,70 +83,70 @@
     behaviors {
         td_f10f11f12: td_f10f11f12 {
             compatible = "zmk,behavior-tap-dance";
-            label = "F10, F11, F12 TapDance";
+            label = "TD_F10F11F12";
             #binding-cells = <0>;
             bindings = <&kp F10>, <&kp F11>, <&kp F12>;
         };
 
         td_f1bt0: td_f1bt0 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TapDance: F1, Bluetooth Profile 0";
+            label = "TD_F1BT0";
             #binding-cells = <0>;
             bindings = <&kp F1>, <&bt BT_SEL 0>;
         };
 
         td_f2bt1: td_f2bt1 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TapDance: F2, Bluetooth Profile 1";
+            label = "TD_F2BT1";
             #binding-cells = <0>;
             bindings = <&kp F2>, <&bt BT_SEL 1>;
         };
 
         td_f3bt2: td_f3bt2 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TapDance: F3, Bluetooth Profile 2";
+            label = "TD_F3BT2";
             #binding-cells = <0>;
             bindings = <&kp F3>, <&bt BT_SEL 2>;
         };
 
         td_f4bt3: td_f4bt3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TapDance: F4, Bluetooth Profile 3";
+            label = "TD_F4BT3";
             #binding-cells = <0>;
             bindings = <&kp F4>, <&bt BT_SEL 3>;
         };
 
         td_f5bt4: td_f5bt4 {
             compatible = "zmk,behavior-tap-dance";
-            label = "TapDance: F5, Bluetooth Profile 4";
+            label = "TD_F5BT4";
             #binding-cells = <0>;
             bindings = <&kp F5>, <&bt BT_SEL 4>;
         };
 
         td_f_fivedra: td_f_fivedra {
             compatible = "zmk,behavior-tap-dance";
-            label = "Taps: F5, Shift+F5";
+            label = "TD_F_FIVEDRA";
             #binding-cells = <0>;
             bindings = <&kp F5>, <&kp LS(F5)>;
         };
 
         td_tabp: td_tabp {
             compatible = "zmk,behavior-tap-dance";
-            label = "Previous Tab Tap Dance";
+            label = "TD_TABD";
             #binding-cells = <0>;
             bindings = <&kp LC(LS(TAB))>, <&kp LC(PAGE_UP)>;
         };
 
         td_tabn: td_tabn {
             compatible = "zmk,behavior-tap-dance";
-            label = "Next Tab Tap Dance";
+            label = "TD_TABN";
             #binding-cells = <0>;
             bindings = <&kp LC(TAB)>, <&kp LC(PAGE_DOWN)>;
         };
 
         td_enter_hotswap: td_enter_hotswap {
             compatible = "zmk,behavior-tap-dance";
-            label = "Taps: TapEnter/HoldLayer_ACTION, HoldLayer_NAVNUM ";
+            label = "TD_ENTER_HOTSWAP";
             #binding-cells = <0>;
             bindings = <&lt 1 ENTER>, <&mo 2>;
         };
