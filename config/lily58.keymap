@@ -19,69 +19,58 @@
             layers = <1>;
         };
 
-        BT0 {
+        BASE_BT0 {
             bindings = <&bt BT_SEL 0>;
             key-positions = <1 53>;
             layers = <0>;
         };
 
-        BT1 {
+        BASE_BT1 {
             bindings = <&bt BT_SEL 1>;
             key-positions = <53 2>;
             layers = <0>;
         };
 
-        BT2 {
+        BASE_BT2 {
             bindings = <&bt BT_SEL 2>;
             key-positions = <53 3>;
             layers = <0>;
         };
 
-        BT3 {
+        BASE_BT3 {
             bindings = <&bt BT_SEL 3>;
             key-positions = <53 4>;
             layers = <0>;
         };
 
-        BT4 {
+        BASE_BT4 {
             bindings = <&bt BT_SEL 4>;
             key-positions = <53 5>;
             layers = <0>;
         };
 
-        F6_ {
-            bindings = <&kp F6>;
-            key-positions = <54 6>;
-        };
-
-        F7_ {
-            bindings = <&kp F7>;
-            key-positions = <54 7>;
-        };
-
-        F8_ {
-            bindings = <&kp F8>;
-            key-positions = <54 8>;
-        };
-
-        F9_ {
-            bindings = <&kp F9>;
+        BASE_BrackBraceL {
+            bindings = <&kp LEFT_BRACKET>;
             key-positions = <54 9>;
+            layers = <0>;
         };
 
-        F10_F11_F12 {
-            bindings = <&td_f10f11f12>;
+        BASE_BrackBraceR {
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <54 10>;
+            layers = <0>;
         };
 
-        EqualsPlus {
+        BASE_EqualsPlus {
             bindings = <&kp EQUAL>;
             key-positions = <54 11>;
+            layers = <0>;
         };
 
-        DoubleTap_BTCLR {
+        BASE_DoubleTap_BTCLR {
             bindings = <&td_none_btclr>;
             key-positions = <53 0>;
+            layers = <0>;
         };
 
         ACTION_Mute {
@@ -110,7 +99,7 @@
 
         ACTION_F_Fivedra_LEFT {
             bindings = <&td_f_fivedra>;
-            key-positions = <42 36>;
+            key-positions = <42 37>;
             layers = <1>;
         };
 
@@ -119,51 +108,14 @@
             key-positions = <0 1>;
             layers = <1>;
         };
+
+        BASE_hold_NUMPAD {
+            bindings = <&mo 2>;
+            key-positions = <54 55>;
+        };
     };
 
     behaviors {
-        td_f10f11f12: td_f10f11f12 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F10F11F12";
-            #binding-cells = <0>;
-            bindings = <&kp F10>, <&kp F11>, <&kp F12>;
-        };
-
-        td_f1bt0: td_f1bt0 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F1BT0";
-            #binding-cells = <0>;
-            bindings = <&kp F1>, <&bt BT_SEL 0>;
-        };
-
-        td_f2bt1: td_f2bt1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F2BT1";
-            #binding-cells = <0>;
-            bindings = <&kp F2>, <&bt BT_SEL 1>;
-        };
-
-        td_f3bt2: td_f3bt2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F3BT2";
-            #binding-cells = <0>;
-            bindings = <&kp F3>, <&bt BT_SEL 2>;
-        };
-
-        td_f4bt3: td_f4bt3 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F4BT3";
-            #binding-cells = <0>;
-            bindings = <&kp F4>, <&bt BT_SEL 3>;
-        };
-
-        td_f5bt4: td_f5bt4 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F5BT4";
-            #binding-cells = <0>;
-            bindings = <&kp F5>, <&bt BT_SEL 4>;
-        };
-
         td_f_fivedra: td_f_fivedra {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_F_FIVEDRA";
@@ -236,16 +188,16 @@
             label = "ACTION";
         };
 
-        NAVNUM {
+        NUMPAD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                   &td_tabdaga          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS  &kp KP_DIVIDE
-&trans  &trans  &trans  &trans  &trans  &trans                   &kp LA(RIGHT_ARROW)  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_ASTERISK
-&trans  &trans  &trans  &trans  &trans  &trans                   &td_f_fivedra        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &none  &kp LA(LEFT_ARROW)   &kp KP_NUMBER_0  &none            &kp KP_DOT       &none         &trans
-                        &trans  &trans  &trans  &trans    &none  &trans               &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans                   &none  &none            &kp KP_DIVIDE    &kp KP_MULTIPLY  &kp KP_MINUS  &none
+&trans  &trans  &trans  &trans  &trans  &trans                   &none  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none         &none
+&trans  &trans  &trans  &trans  &trans  &trans                   &none  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS   &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &none  &none  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
+                        &trans  &trans  &trans  &trans    &none  &none  &kp KP_NUMBER_0  &kp KP_DOT
             >;
 
-            label = "NAVNUM";
+            label = "NUMPAD";
         };
     };
 };
