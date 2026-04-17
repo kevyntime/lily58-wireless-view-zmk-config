@@ -177,12 +177,20 @@
     };
 
     macros {
-        onrelease_tolayer_base: onrelease_tolayer_base {
+        onrelease_tolayerbase: onrelease_tolayerbase {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_release>;
+            bindings = <&macro_release>, <&to 0>;
 
-            label = "ONRELEASE_TOLAYER_BASE";
+            label = "ONRELEASE_TOLAYERBASE";
+        };
+
+        onpresstap_tolayeraction_enter: onpresstap_tolayeraction_enter {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&to 1>, <&macro_tap>, <&kp ENTER>;
+
+            label = "ONPRESSTAP_TOLAYERACTION_ENTER";
         };
     };
 
@@ -199,11 +207,11 @@
 
             display-name = "Base";
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3     &kp N4    &kp N5                                     &kp N6         &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
-&kp TAB    &kp Q   &kp W   &kp E      &kp R     &kp T                                      &kp Y          &kp U     &kp I      &kp O    &kp P     &kp BACKSLASH
-&kp ESC    &kp A   &kp S   &kp D      &kp F     &kp G                                      &kp H          &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C      &kp V     &kp B         &kp DELETE    &kp BACKSPACE  &kp N          &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                           &kp LCTRL  &kp LGUI  &kp LEFT_ALT  &kp SPACE     &lt 1 ENTER    &kp RIGHT_ALT  &kp LGUI  &kp RCTRL
+&kp GRAVE  &kp N1  &kp N2  &kp N3     &kp N4    &kp N5                                                       &kp N6         &kp N7    &kp N8     &kp N9   &kp N0    &kp MINUS
+&kp TAB    &kp Q   &kp W   &kp E      &kp R     &kp T                                                        &kp Y          &kp U     &kp I      &kp O    &kp P     &kp BACKSLASH
+&kp ESC    &kp A   &kp S   &kp D      &kp F     &kp G                                                        &kp H          &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z   &kp X   &kp C      &kp V     &kp B         &kp DELETE    &kp BACKSPACE                    &kp N          &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
+                           &kp LCTRL  &kp LGUI  &kp LEFT_ALT  &kp SPACE     &onpresstap_tolayeraction_enter  &kp RIGHT_ALT  &kp LGUI  &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -212,11 +220,11 @@
 
         ACTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                   &mkp MB1        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB2         &td_tabp           &td_tabn
-&trans  &trans  &trans  &trans  &trans  &trans                   &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp C_PREVIOUS     &kp C_NEXT
-&trans  &trans  &trans  &trans  &trans  &trans                   &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &none  &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &tog 2             &trans
-                        &trans  &trans  &trans  &trans    &none  &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                    &mkp MB1        &msc SCRL_DOWN  &msc SCRL_UP  &mkp MB2         &td_tabp           &td_tabn
+&trans  &trans  &trans  &trans  &trans  &trans                                    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &kp C_PREVIOUS     &kp C_NEXT
+&trans  &trans  &trans  &trans  &trans  &trans                                    &kp LEFT        &kp DOWN        &kp UP        &kp RIGHT        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &none                   &kp HOME        &kp PG_DN       &kp PG_UP     &kp END          &tog 2             &trans
+                        &trans  &trans  &trans  &trans    &onrelease_tolayerbase  &trans          &trans          &trans
             >;
 
             label = "ACTION";
@@ -224,11 +232,11 @@
 
         NAVNUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                     &td_ctrlw_ctrlshiftw  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS  &kp KP_DIVIDE
-&trans  &trans  &trans  &trans  &trans  &trans                                     &kp LA(RIGHT_ARROW)   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_ASTERISK
-&trans  &trans  &trans  &trans  &trans  &trans                                     &td_f_fivedra         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &none                    &kp LA(LEFT_ARROW)    &kp KP_NUMBER_0  &none            &kp KP_DOT       &tog 2        &trans
-                        &trans  &trans  &trans  &trans    &onrelease_tolayer_base  &trans                &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans                                    &td_ctrlw_ctrlshiftw  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS  &kp KP_DIVIDE
+&trans  &trans  &trans  &trans  &trans  &trans                                    &kp LA(RIGHT_ARROW)   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS   &kp KP_ASTERISK
+&trans  &trans  &trans  &trans  &trans  &trans                                    &td_f_fivedra         &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER  &none
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &none                   &kp LA(LEFT_ARROW)    &kp KP_NUMBER_0  &none            &kp KP_DOT       &tog 2        &trans
+                        &trans  &trans  &trans  &trans    &onrelease_tolayerbase  &trans                &trans           &trans
             >;
 
             label = "NAVNUM";
