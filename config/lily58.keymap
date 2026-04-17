@@ -180,7 +180,7 @@
         onrelease_tolayerbase: onrelease_tolayerbase {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_release>, <&to 0>;
+            bindings = <&macro_pause_for_release>, <&macro_release>, <&to 0>;
 
             label = "ONRELEASE_TOLAYERBASE";
         };
